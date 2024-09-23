@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './component/NavBar'
 import Home from './component/Home'
 import Login from './component/Login'
 import Register from './component/Register'

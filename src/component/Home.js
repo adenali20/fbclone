@@ -1,11 +1,10 @@
-import React,{useContext,useEffect,useState} from "react";
+import React,{useContext,useState} from "react";
 import {SocketContext} from '../context/SocketContext'
 import { UserContext } from "../context/UserContext";
 import { MessageContext } from "../context/MessageContext";
 import NavBar from '../component/NavBar'
 import {
     // BrowserRouter as Router,
-    Switch,
     // Route,
     Link
   } from "react-router-dom";
