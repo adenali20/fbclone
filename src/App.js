@@ -24,7 +24,7 @@ export default function App() {
   const [user,setUser]=useState("adesh")
   const socket = socketIO.connect('http://localhost:4000');
 
-  // const [isConnected, setIsConnected] = useState(socket.connected);
+  const [isConnected, setIsConnected] = useState(socket.connected);
   const [fooEvents, setFooEvents] = useState([]);
 
 
