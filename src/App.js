@@ -7,12 +7,7 @@ import React from "react";
 import { SocketContext } from './context/SocketContext';
 import { UserContext } from './context/UserContext';
 import { MessageContext } from './context/MessageContext';
-import {
-  // BrowserRouter as Router,
-  Switch,
-  // Route,
-  Link
-} from "react-router-dom";
+
 import { useEffect , useState } from 'react';
 import {createBrowserRouter ,  RouterProvider} from 'react-router-dom'
 
