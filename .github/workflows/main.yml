@@ -23,7 +23,14 @@ jobs:
       
       - name: Dependecies
         run: npm ci
-      
+        
+      - name: Run ESLint
+        run: |
+           # Disable ESLint for this workflow
+           # eslint-disable-next-line no-console
+           echo "ESLint is disabled for this workflow" 
+           # npm run lint 
+           
       - name: Build
         run: npm run build
         
