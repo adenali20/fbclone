@@ -22,7 +22,7 @@ export default function App() {
 
 
   const [user,setUser]=useState("adesh")
-  const socket = socketIO.connect('http://adenmali:4000');
+  const socket = socketIO.connect('http://adenmali.com:30002');
 
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [fooEvents, setFooEvents] = useState([]);
