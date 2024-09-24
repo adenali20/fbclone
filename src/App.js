@@ -22,7 +22,7 @@ export default function App() {
 
 
   const [user,setUser]=useState("adesh")
-  const socket = socketIO.connect('http://gnodeserver');
+  const socket = socketIO.connect('http://gnodeserver:4000');
 
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [fooEvents, setFooEvents] = useState([]);
