@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './component/Home'
-import Login from './component/Login'
+import Login from './component/login/Login'
 import Register from './component/Register'
 import socketIO from 'socket.io-client';
 import React from "react";
@@ -31,6 +31,11 @@ export default function App() {
 
 
 
+  useEffect(()=>{
+    console.log("<>>>>>",window.sessionStorage.getItem("jwtToken"));
+    
+
+  },[])
 
 
   useEffect(() => {
@@ -66,19 +71,14 @@ export default function App() {
         <UserContext.Provider value={{user,setUser}}>
         <MessageContext.Provider value={[...fooEvents]}>
       <div>
-       
+      <div className="w3-container w3-content" style={{maxWidth:"1400px",marginTop:"80px"}}>
         <RouterProvider router={router}>
-        <div className="w3-container w3-content" style={{maxWidth:"1400px",marginTop:"80px"}}>
         
-          {/* <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/login"  component={Login} />
-          <Route path="/register"  component={Register} />
         
-            
-          </Switch>  */}
-        </div>
+         
         </RouterProvider>
+        </div>
+
 
        
       </div>
