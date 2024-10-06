@@ -84,7 +84,7 @@ export default function Home({ messages }) {
           } */}
         </div>
         {
-            messageObj.reverse.map(e => {
+            [...messageObj].reverse().map(e => {
               console.log("MMMMM...",e);
               
               return  <Post post={e}/>
