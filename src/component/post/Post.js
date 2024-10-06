@@ -21,7 +21,7 @@ export default function Post({post}) {
     <span className="w3-right w3-opacity">2 min</span>
     <h4>John Doe</h4><br/>
     <hr className="w3-clear"/>
-    <p>{post}.</p>
+    <p>{post?post.text:"random message"}</p>
       <div className="w3-row-padding" style={{"margin":"0 -16px"}}>
         <div className="w3-half">
           <img src="https://www.w3schools.com/w3images/lights.jpg" style={{"width":"100%"}} alt="Northern Lights" className="w3-margin-bottom"/>
