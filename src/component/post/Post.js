@@ -14,11 +14,11 @@ import {encode} from 'base-64';
 
 export default function Post({post}) {
  
-  console.log(post);
+  console.log("#",post);
   
     return <div className="w3-container w3-card w3-white w3-round w3-margin"><br/>
     <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" className="w3-left w3-circle w3-margin-right" style={{"width":"60px"}}/>
-    <span className="w3-right w3-opacity">1 min</span>
+    <span className="w3-right w3-opacity">2 min</span>
     <h4>John Doe</h4><br/>
     <hr className="w3-clear"/>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
