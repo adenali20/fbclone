@@ -36,6 +36,7 @@ export default function Home({ messages }) {
       socketID: socket.id,
     });
     console.log("sent");
+    setValue("")
 
   }
 
@@ -81,7 +82,7 @@ export default function Home({ messages }) {
         </div>
         {
             messageObj.map(e => {
-              return  <Post/>
+              return  <Post post={e}/>
             })
           }
           
