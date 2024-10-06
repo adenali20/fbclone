@@ -22,16 +22,19 @@ export default function Home({ messages }) {
     let jwtToken = window.sessionStorage.getItem("jwtToken")
     if (jwtToken == null || jwtToken == undefined) {
       navigate("/login")
+    }else{
+
     }
   }, [])
 
   const [value, setValue] = useState("");
   const sendMessage = () => {
 
+    let userName=window.sessionStorage.getItem("userName");
 
     socket.emit('chat message', {
       text: value,
-      name: "aden",
+      name: userName,
       id: `${socket.id}${Math.random()}`,
       socketID: socket.id,
     });
@@ -81,7 +84,7 @@ export default function Home({ messages }) {
           } */}
         </div>
         {
-            messageObj.map(e => {
+            messageObj.reverse.map(e => {
               console.log("MMMMM...",e);
               
               return  <Post post={e}/>

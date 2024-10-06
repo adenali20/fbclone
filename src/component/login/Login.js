@@ -35,6 +35,7 @@ const handleLogin=(un,pwd)=>{
     if (!response.ok) throw new Error(response.status);
     
     window.sessionStorage.setItem("jwtToken",response.headers.get("Authorization"));
+    window.sessionStorage.setItem("userName",response.headers.set(un));
     navigate(`/`)
 
     return response;
