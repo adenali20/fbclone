@@ -82,6 +82,8 @@ export default function Home({ messages }) {
         </div>
         {
             messageObj.map(e => {
+              console.log("MMMMM...",e);
+              
               return  <Post post={e}/>
             })
           }
