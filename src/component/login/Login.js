@@ -14,8 +14,8 @@ import {encode} from 'base-64';
 
 
 export default function Login() {
-  const [userName,setUserName] = useState('ayan1')
-  const [password,setPassword] = useState('123')
+  const [userName,setUserName] = useState('')
+  const [password,setPassword] = useState('')
   const navigate = useNavigate()
   const socket=useContext(SocketContext)
 
