@@ -1,5 +1,9 @@
 
 import React,{useEffect} from "react";
+import {
+    useNavigate ,
+    Link
+  } from "react-router-dom";
 
 function App() {
 
@@ -17,6 +21,9 @@ function App() {
                 <a href="/login" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i className="fa fa-globe"></i></a>
                 <a href="/login" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i className="fa fa-user"></i></a>
                 <a href="/login" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i className="fa fa-envelope"></i></a>
+                <div className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">
+                    <Link to="/friends" ><i className="fa fa-search"> </i></Link>
+                </div>
                 <div className="w3-dropdown-hover w3-hide-small">
                     <button className="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style={{width:"300px"}}>

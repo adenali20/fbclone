@@ -2,6 +2,7 @@ import './App.css';
 import Home from './component/Home'
 import Login from './component/login/Login'
 import Register from './component/Register'
+import Friends from './component/friends/Friends'
 import socketIO from 'socket.io-client';
 import React from "react";
 import { SocketContext } from './context/SocketContext';
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   { path: "/",element: <Home/>},
   { path: "/login",element: <Login/>},
   { path: "/register",element: <Register/>},
+  { path: "/friends",element: <Friends/>}
 ]);
 
 export default function App() {
