@@ -13,8 +13,11 @@ import {
   Link
 } from "react-router-dom";
 import Post from "./post/Post";
+
+import {get,post} from '../util/httpClient'
 export default function Home({ messages }) {
   const navigate = useNavigate()
+  const [posts,setPosts]=useState([])
   const socket = useContext(SocketContext)
 
   const userObj = useContext(UserContext)
@@ -30,6 +33,37 @@ export default function Home({ messages }) {
     }
   }, [])
 
+  
+  useEffect(()=>{
+    getPosts()
+  },[])
+
+
+  const getPosts = () => {
+
+
+    const jwt=window.sessionStorage.getItem("jwtToken")
+
+    fetch(`http://localhost:8080/api/fbcpost/post/getPost`, {
+      headers: new Headers({
+        "Authorization": jwt
+      }),
+    }).then(response => {
+
+      return response.json();
+    }).then(res => {
+
+      // setFriendRequests(res)
+      setPosts(res)
+      console.log("res ", res);
+      // setReceivedList(res);
+
+    }).catch(err => {
+      console.log(err);
+
+    })
+  }
+
   const [value, setValue] = useState("");
   const sendMessage = () => {
 
@@ -43,6 +77,29 @@ export default function Home({ messages }) {
     });
     console.log("sent");
     setValue("")
+
+  }
+
+  const makePost = () => {
+
+    let userName=window.sessionStorage.getItem("userName");
+
+    try {
+      post({
+        "content":value,
+        "parentId":"",
+        "mainPostId":"",
+        "inks":[],
+        "isMain":true,
+        "isComment":false
+      },"post/makePost")
+      setValue("")
+  
+    } catch (error) {
+      console.log(error)
+    }
+   
+    
 
   }
 
@@ -74,7 +131,7 @@ export default function Home({ messages }) {
                 <input value={value} onChange={(e) => { setValue(e.target.value) }} placeholder="write something ..." />
                 <button type="button" className="w3-button w3-theme"
 
-                  onClick={() => sendMessage()}><i className="fa fa-pencil"></i>  Post</button>
+                  onClick={() => makePost()}><i className="fa fa-pencil"></i>  Post</button>
               </div>
             </div>
             
@@ -87,7 +144,7 @@ export default function Home({ messages }) {
           } */}
         </div>
         {
-            [...messageObj].reverse().map(e => {
+            posts.map(e => {
               console.log("MMMMM...",e);
               
               return  <Post post={e}/>

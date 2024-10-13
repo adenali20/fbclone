@@ -14,14 +14,14 @@ import {encode} from 'base-64';
 
 export default function Post({post}) {
  
-  console.log("#",post);
+    
   
     return <div className="w3-container w3-card w3-white w3-round w3-margin"><br/>
     <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" className="w3-left w3-circle w3-margin-right" style={{"width":"60px"}}/>
     <span className="w3-right w3-opacity">2 min</span>
-    <h4>{post?post.name:"John Doe"}</h4><br/>
+    <h4>{post?post.postedBy:"John Doe"}</h4><br/>
     <hr className="w3-clear"/>
-    <p>{post?post.text:"random message"}</p>
+    <p>{post?post.content:"random message"}</p>
       <div className="w3-row-padding" style={{"margin":"0 -16px"}}>
         {/* <div className="w3-half">
           <img src="https://www.w3schools.com/w3images/lights.jpg" style={{"width":"100%"}} alt="Northern Lights" className="w3-margin-bottom"/>
