@@ -11,9 +11,14 @@ import NavBar from '../NavBar'
 import { jwtDecode } from "jwt-decode";
 import {encode} from 'base-64';
 
+import Comment from '../comment/Comment'
+
 
 export default function Post({post}) {
  
+  const[showComment,setShowComment]=useState(false);
+
+  
     
   
     return <div className="w3-container w3-card w3-white w3-round w3-margin"><br/>
@@ -31,6 +36,7 @@ export default function Post({post}) {
       </div> */}
     </div>
     <button type="button" className="w3-button w3-theme-d1 w3-margin-bottom"><i className="fa fa-thumbs-up"></i>  Like</button> 
-    <button type="button" className="w3-button w3-theme-d2 w3-margin-bottom"><i className="fa fa-comment"></i>  Comment</button> 
+    <button type="button" className="w3-button w3-theme-d2 w3-margin-bottom" onClick={()=>setShowComment(!showComment)}><i className="fa fa-comment"></i>  Comment</button> 
+  {showComment?<Comment></Comment>:""}
   </div>
   }
