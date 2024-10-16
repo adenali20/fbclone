@@ -44,7 +44,7 @@ export default function Home({ messages }) {
 
     const jwt=window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://localhost:8080/api/fbcpost/post/getPost`, {
+    fetch(`http://adenmali.com/api/fbc/post/getPost`, {
       headers: new Headers({
         "Authorization": jwt
       }),
@@ -92,7 +92,7 @@ export default function Home({ messages }) {
         "inks":[],
         "isMain":true,
         "isComment":false
-      },"post/makePost")
+      },"makePost")
       setValue("")
   
     } catch (error) {

@@ -44,7 +44,7 @@ export default function Login() {
 
     const jwt=window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://localhost:8080/api/fbcpost/getFriendRequest`, {
+    fetch(`http://adenmali.com/api/fbc/post/getFriendRequest`, {
       headers: new Headers({
         "Authorization": jwt
       }),

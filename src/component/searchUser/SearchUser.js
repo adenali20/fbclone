@@ -46,7 +46,7 @@ export default function SearchUser() {
       return
     }
 
-    fetch(`http://localhost:8080/api/fbcpost/${value}`, {
+    fetch(`http://adenmali.com/api/fbc/post/${value}`, {
       headers: new Headers({
         "Authorization": jwt
       }),

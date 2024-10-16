@@ -1,7 +1,8 @@
+const uri='http://adenmali.com'
 export function post(body,url){
     const jwt = window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://localhost:8080/api/fbcpost/${url}`, {
+    fetch(`${uri}/api/fbc/post/${url}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
         "Authorization": jwt
@@ -21,7 +22,7 @@ export function post(body,url){
 export function get(url){
     const jwt = window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://localhost:8080/api/fbcpost/${url}`, {
+    fetch(`${uri}/api/fbc/post/${url}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
         "Authorization": jwt
