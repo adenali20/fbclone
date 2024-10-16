@@ -27,7 +27,7 @@ export default function Login() {
 
 const handleLogin=(un,pwd)=>{
   
-  fetch("http://adenmali.com/api/users/login", {
+  fetch("http://adenmali.com/api/mvn1/users/login", {
     headers: new Headers({
       "Authorization": `Basic ${encode(`${un}:${pwd}`)}`
     }),
