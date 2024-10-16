@@ -49,9 +49,7 @@ const handleLogin=(un,pwd)=>{
        <Link to="/">Home</Link>
 
        <div class="loginbody">
-          <h2>Responsive Social Login Form</h2>
-          <p>Resize the browser window to see the responsive effect. When the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other.</p>
-          
+          <h2>Login Page</h2>
           <div class="container">
             {/* <form> */}
               <div class="row">
