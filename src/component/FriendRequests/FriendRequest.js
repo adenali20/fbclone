@@ -13,7 +13,7 @@ import '../login/Login.css'
 import { encode } from 'base-64';
 import { useDebounce } from 'use-debounce';
 import {post,get} from '../../util/httpClient'
-
+import {URI,FBC} from '../../util/Constants'
 export default function Login() {
 
   const [friendRequests,setFriendRequests]=useState([])
@@ -44,7 +44,9 @@ export default function Login() {
 
     const jwt=window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://adenmali.com/api/fbc/post/getFriendRequest`, {
+    
+
+    fetch(`${URI}/${FBC}/getFriendRequest`, {
       headers: new Headers({
         "Authorization": jwt
       }),

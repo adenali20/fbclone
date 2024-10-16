@@ -1,8 +1,8 @@
-const uri='http://adenmali.com'
+import {URI,FBC} from './Constants'
 export function post(body,url){
     const jwt = window.sessionStorage.getItem("jwtToken")
 
-    fetch(`${uri}/api/fbc/post/${url}`, {
+    fetch(`${URI}/${FBC}/${url}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
         "Authorization": jwt
@@ -19,10 +19,10 @@ export function post(body,url){
     })
 }
 
-export function get(url){
+export async function get(url){
     const jwt = window.sessionStorage.getItem("jwtToken")
 
-    fetch(`${uri}/api/fbc/post/${url}`, {
+    await fetch(`${URI}/${FBC}/${url}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
         "Authorization": jwt

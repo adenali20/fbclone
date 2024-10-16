@@ -13,6 +13,10 @@ import '../login/Login.css'
 import { encode } from 'base-64';
 import { useDebounce } from 'use-debounce';
 
+import {get,post} from '../../util/httpClient'
+
+import {URI,FBC} from '../../util/Constants'
+
 
 export default function Login() {
 
@@ -27,9 +31,20 @@ export default function Login() {
 
   const getFriends = () => {
 
-    const jwt=window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://adenmali.com/api/fbc/post/getFriends`, {
+    // await get(`getFriends`)
+    // .then(res=>{
+    //   setFriends(res)
+
+    // }).catch(err=>{
+    //   setFriends([])
+
+    //   console.log("########",err);
+      
+    // });
+
+    const jwt = window.sessionStorage.getItem("jwtToken")
+    fetch(`${URI}/${FBC}/getFriends`, {
       headers: new Headers({
       "Authorization": jwt
     }),}).then(response => {

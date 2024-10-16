@@ -13,7 +13,7 @@ import {
   Link
 } from "react-router-dom";
 import Post from "./post/Post";
-
+import {URI,FBC} from '../util/Constants'
 import {get,post} from '../util/httpClient'
 export default function Home({ messages }) {
   const navigate = useNavigate()
@@ -44,7 +44,7 @@ export default function Home({ messages }) {
 
     const jwt=window.sessionStorage.getItem("jwtToken")
 
-    fetch(`http://adenmali.com/api/fbc/post/getPost`, {
+    fetch(`${URI}/${FBC}/getPost`, {
       headers: new Headers({
         "Authorization": jwt
       }),

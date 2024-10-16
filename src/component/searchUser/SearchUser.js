@@ -15,7 +15,7 @@ import { useDebounce } from 'use-debounce';
 
 import {post} from '../../util/httpClient'
 
-
+import {URI,FBC} from '../../util/Constants'
 export default function SearchUser() {
   const [searchValue, setSearchValue] = useState('')
   const [foundUsers, setFoundUsers] = useState([])
@@ -46,7 +46,7 @@ export default function SearchUser() {
       return
     }
 
-    fetch(`http://adenmali.com/api/fbc/post/${value}`, {
+    fetch(`${URI}/${FBC}/${value}`, {
       headers: new Headers({
         "Authorization": jwt
       }),
