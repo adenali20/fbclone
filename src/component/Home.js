@@ -131,7 +131,7 @@ export default function Home({ messages }) {
                 <input value={value} onChange={(e) => { setValue(e.target.value) }} placeholder="write something ..." />
                 <button type="button" className="w3-button w3-theme"
 
-                  onClick={() => makePost()}><i className="fa fa-pencil" style={{backgroundColor:"green"}}></i>  Post</button>
+                  onClick={() => makePost()}><i className="fa fa-pencil" style={{backgroundColor:"blue"}}></i>  Post</button>
               </div>
             </div>
             
